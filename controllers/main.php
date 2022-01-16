@@ -2,7 +2,7 @@
 
 //Import players
 $file_name = 'SuperSmashBrosMelee';
-$players_import = file('.\\src\\players\\'.$file_name.'.txt', FILE_IGNORE_NEW_LINES);
+$players_import = file('.\\src\\players\\'.$file_name.'.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 
 // Variables
@@ -16,7 +16,7 @@ foreach ($players_import as $key => $value) {
 
 }
 shuffle($players);
-//Setup empty $matches array and bool $tournament_over
+//Setup empty $matches array, bool $tournament_over
 $matches = array();
 $tournament_over = false;
 
@@ -49,6 +49,8 @@ function MatchesAttribution(): void{
     global $tournament_over;
     global $contestants;
     global $matches;
+    global $top_size;
+    global $players;
 
     $matches = array();
     $match_number = 0;
@@ -57,12 +59,20 @@ function MatchesAttribution(): void{
 
         $tournament_over = true;
     
-    } else if (count($contestants) % 2 != 0) {
+    } else if ( (count($contestants) - ($top_size / 2) != 0) && (count($contestants) == count($players)) ) {
 
-        $matches[$match_number] = array(
-            $contestants[0],
-            $contestants[1]
-        );
+        $catchup_matches = count($contestants) - ($top_size / 2);
+
+        for ($i=0; $i < $catchup_matches *2 ; $i+=2) { 
+
+            $matches[$match_number] = array(
+                $contestants[$i],
+                $contestants[$i+1]
+            );
+            
+            $match_number++;
+    
+        }
     
     } else {
 
@@ -90,7 +100,6 @@ function MatchResults(): void{
 
     for ($i=0; $i < count($matches) ; $i++) { 
 
-        echo(PHP_EOL.'match n°'.$i.PHP_EOL);
         echo($matches[$i][0]['name']." VS ".$matches[$i][1]['name'].PHP_EOL);
 
         //Random winner
@@ -110,11 +119,22 @@ function MatchResults(): void{
 
 }
 
+//Determine top size
+$top_size = 1;
+while ($top_size < count($players)) {
 
-//Launch the tournament
-while ($tournament_over == false) {
+    $top_size *= 2;
 
-    echo(PHP_EOL.PHP_EOL.'--- --- ---'.PHP_EOL);
+};
+$current_top = $top_size;
+
+//Launches the tournament
+while ($tournament_over === false) {
+
+    echo(PHP_EOL.'--- --- --- --- --- ---'.PHP_EOL);
+
+    echo("Top : ".$current_top.PHP_EOL.PHP_EOL);
+    $current_top /= 2;
 
     SetupContestants();
 
@@ -122,12 +142,12 @@ while ($tournament_over == false) {
 
     MatchResults();
 
-    usleep(1000000);
+    usleep(500000);
 
 }
 
 
-echo(PHP_EOL.'---Tournament Over!---'.PHP_EOL);
+echo(PHP_EOL.'--- Tournament Over! ---'.PHP_EOL);
 echo('Winner is: '.$contestants[0]['name']);
 
 
