@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * @author AnkhSquirrel
+*/ 
+
 //Import players
 $file_name = 'SuperSmashBrosMelee';
 $players_import = file('.\\src\\players\\'.$file_name.'.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);

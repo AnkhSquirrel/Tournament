@@ -1,0 +1,29 @@
+body{
+
+    background-color: #444444;
+}
+
+#setSelection{
+
+    background-color: #222222;
+    color: white;
+    width: 500px;
+    float: left;
+    
+}
+
+#seeding{
+
+    background-color: #222222;
+    color: white;
+    width: 500px;
+    float: left;
+    
+}
+
+#bracket{
+
+    background-color: #222222;
+    float: left;
+
+}
