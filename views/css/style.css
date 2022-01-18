@@ -4,6 +4,12 @@ body{
 
 }
 
+#setName{
+
+    width:300px;
+
+}
+
 #bracketGeneration{
 
     display: none;
@@ -28,8 +34,20 @@ input[type="checkbox"] + label {
 
 }
 
-.one{
+.red{
+
+    color: red;
+
+}
+
+.green{
 
     color: green;
+
+}
+
+.blue{
+
+    color: blue;
 
 }

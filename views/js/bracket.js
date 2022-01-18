@@ -32,14 +32,11 @@ $(document).ready(function() {
                 case "entry-complete":
                     container.append(
 
-                        `<div class="` + data.player + `">` +
+                        `<div class="` + data.color + `">` +
                         data.name + 
                         `</div>`
 
-                        
-                        
                     );
-
                     return;
     
             }
