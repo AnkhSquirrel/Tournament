@@ -12,7 +12,6 @@
 function sendCharactersToBracket() {
 
     let characters=[];
-    let teams = [];
 
     //Pushes the checked characters to characters array
     $('#charactersList input[type=checkbox]').each(element => {
@@ -25,11 +24,13 @@ function sendCharactersToBracket() {
 
     });
 
+    let teams = [];
+
     let nbOfCharacters = characters.length;
 
     if (nbOfCharacters == 1) {
 
-        teams.push( [characters[0], null] );
+        teams.push( [{name: characters[0], player: 1}, null] );
         
     } else {
 
@@ -60,18 +61,23 @@ function sendCharactersToBracket() {
     
         //Takes characters and put them in a bracket ready array
         for (let i = 0; i < characters.length; i++) {
-    
+
+            let match = [];
+            match[0] = { name: characters[i], player: "one" };
+
             if (catchup_matches != 0) {
-    
-                teams.push( [characters[i], characters[(i+1)]] );
+
+                match[1] = { name: characters[i+1], player: "one" };
                 i++;
                 catchup_matches--;
-                
+  
             } else {
-    
-                teams.push( [characters[i], null] );
+
+                match[1] = null;
     
             }
+
+            teams.push( match );
     
         }
 

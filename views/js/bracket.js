@@ -30,7 +30,16 @@ $(document).ready(function() {
                 case "entry-no-score":
                 case "entry-default-win":
                 case "entry-complete":
-                    container.append(data);
+                    container.append(
+
+                        `<div class="` + data.player + `">` +
+                        data.name + 
+                        `</div>`
+
+                        
+                        
+                    );
+
                     return;
     
             }
