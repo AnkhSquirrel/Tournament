@@ -1,29 +1,29 @@
 body{
 
-    background-color: #444444;
+    background-color: #222222;
+
 }
 
-#setSelection{
+#bracketGeneration{
 
-    background-color: #222222;
-    color: white;
-    width: 500px;
-    float: left;
+    display: none;
     
 }
 
-#seeding{
+.characterCheckbox{
 
-    background-color: #222222;
-    color: white;
-    width: 500px;
-    float: left;
-    
+    display: none;
+
 }
 
-#bracket{
+input[type="checkbox"]:checked + label {
 
-    background-color: #222222;
-    float: left;
+    color: white;
+
+}
+
+input[type="checkbox"] + label {
+
+    color: black;
 
 }

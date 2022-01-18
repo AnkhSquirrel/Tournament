@@ -28,16 +28,12 @@ $(document).ready(function() {
                 });
                 
             } catch (error) {
-
-                console.log(error);
                 
             }
 
         },
 
         error:function(response){
-
-            console.log(response);
 
         }
 

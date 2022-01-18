@@ -6,15 +6,15 @@
 
 $(document).ready(function() {
 
-    $("#bracketGeneration").click(function(){
-
+    $("#bracketGeneration").click(function(){   
+        
         bracketData = {
 
-            teams: window.teams,
+            teams: sendCharactersToBracket(),
             results: []
     
         };
-    
+
         function render_fn(container, data, score, state) {
 
             switch(state) {
@@ -49,8 +49,6 @@ $(document).ready(function() {
             disableToolbar: true,
     
         });
-
-        document.getElementById("bracketGenerationButtonName").innerText = 'Reset Bracket';
 
     });
 

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 
 <head>
+
     <!-- meta -->
+    <html lang="en">
     <meta charset="UTF-8">
     <meta name="description" content="Tournament Generator">
     <meta name="keywords" content="Tournament, Generator, Bracket, Game, Characters">
     <meta name="author" content="AnkhSquirrel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <html lang="en">
 
     <!-- title -->
     <title>Tournament</title>
@@ -20,10 +21,11 @@
     <!-- script -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bracket/0.11.1/jquery.bracket.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bracket/0.11.1/jquery.bracket.min.js" async></script>
     <script type="text/javascript" src="/views/js/getSets.js"></script>
-    <script type="text/javascript" src="/views/js/getCharacters.js" ></script>
-    <script type="text/javascript" src="/views/js/bracket.js" ></script>
+    <script type="text/javascript" src="/views/js/getCharactersFromSet.js" async></script>
+    <script type="text/javascript" src="/views/js/bracket.js" async></script>
+    <script type="text/javascript" src="/views/js/sendCharactersToBracket.js" async></script>
 
 </head>
 <body>
@@ -34,24 +36,16 @@
         <option></option>
     </select>
 
-    <button id="bracketGeneration">
-        <div id="bracketGenerationButtonName">
-            Generate Bracket
-        </div>
-    </button>
-    
     <div id="charactersList">
     </div>
 
-    <div id="shuffledCharacters">
-    </div>
+    <button id="bracketGeneration">Generate Bracket</button>
 
 </div>
 
 
 <div id="bracket">
 </div>
-
 
 
 </body>
