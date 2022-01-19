@@ -133,8 +133,8 @@ function sendCharactersToBracket() {
     
 }
 
- $('#setName').on('select2:select', function (e) {
+$('#setName').on('select2:select', function (e) {
 
     document.getElementById('bracketGeneration').style.display='block';
 
-}); 
+});

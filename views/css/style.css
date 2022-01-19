@@ -1,7 +1,83 @@
+:root {
+
+    --primary: #F2B366;
+    --secondary: #66C4F2;
+    --background: #2A3640;
+  
+    --create: #66d98c;
+    --read: #A69B7C;
+    --update: #D97B66;
+    --delete: #BF6060;
+  
+    --text: #FFFFFF;
+    --text-hover: #F2B366;
+  
+    --table-primary: #435666;
+    --table-secondary: #4C6173;
+    --table-hover: #435660;
+  
+}
+
 body{
 
-    background-color: #222222;
+    /*
+    font-family: 'SarabunThin';
+    */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+    font-style: normal; 
+    
+}
+/* --- BLOCKS --- */
 
+#introduction,
+#players,
+#game{
+    
+    background-color: gray;
+    text-align: center;
+    position: relative;
+    width: 50%;
+    min-width: 400px;
+    padding: 5px;
+    margin: 5px auto;
+    
+}
+
+/* --- INTRODUCTION --- */
+
+#introduction{
+    
+    width: 30%;
+    min-width: 400px;
+    
+}
+
+#introduction p{
+
+    color: blue;
+    line-height: 16px;
+    margin-bottom: 16px;
+
+}
+
+#introductionCloseButton{
+
+    background-color: red;
+    color: green;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    font-size: 48px;
+    padding: 0;
+
+}
+
+/* --- PLAYERS --- */
+
+#players{
+
+    
 }
 
 #setName{

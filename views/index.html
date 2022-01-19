@@ -15,6 +15,7 @@
 
     <!-- style -->
     <link rel="stylesheet" type="text/css" href="/views/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://fontlibrary.org//face/sarabun-project"/> 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bracket/0.11.1/jquery.bracket.min.css"/>
 
@@ -26,30 +27,59 @@
     <script type="text/javascript" src="/views/js/getCharactersFromSet.js" async></script>
     <script type="text/javascript" src="/views/js/bracket.js" async></script>
     <script type="text/javascript" src="/views/js/sendCharactersToBracket.js" async></script>
+    <script type="text/javascript" src="/views/js/introductionBox.js" async></script>
 
 </head>
 <body>
 
+    <div id="introduction">
 
-    <select id="playerOneColor">
-        <option value="red" selected>Red</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-    </select>
+        <div id="introductionCloseButton">X</div>
 
-    <select id="playerTwoColor">
-        <option value="red">Red</option>
-        <option value="green" selected>Green</option>
-        <option value="blue">Blue</option>
-    </select>
+        <h3><p>What is this?</p></h3>
+        <p>When I was young, me and my older brother would play tournaments with our favorite fighting game.</p>
+        <p>We would write down the name of every character on a piece of paper, shuffle them, and alternately pick one at random.
+            The one you had picked was your next contestant in the bracket.</p>
+        <p>Little by little, our tournament would fill up.
+            By the end of it, we each owned half of the bracket.</p>
+        <p>The goal? Win the tournament with one of your characters.</p>
+        <p>Now here's a website to do just that.</p>
+
+    </div>
 
 
+    <div id="players">
 
-    <select id="setName">
-        <option></option>
-    </select>
+        <div id="playerOne">
+            <select id="playerOneColor">
+                <option value="red" selected>Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+            <input type="text" value="Player 1">
+        </div>
 
-    <div id="charactersList">
+        <div id="playerTwo">
+            <select id="playerTwoColor">
+                <option value="red">Red</option>
+                <option value="green" selected>Green</option>
+                <option value="blue">Blue</option>
+            </select>
+            <input type="text" value="Player 2">
+        </div>
+
+    </div>
+
+
+    <div id="game">
+
+        <select id="setName">
+            <option></option>
+        </select>
+    
+        <div id="charactersList">
+        </div>
+
     </div>
 
     <button id="bracketGeneration">
